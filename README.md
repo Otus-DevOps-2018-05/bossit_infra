@@ -1,7 +1,7 @@
 # bossit_infra
 bossit Infra repository
 
-## Сервера на GCP
+## HW5
 
 bastion_IP=35.206.179.241
 someinternalhost_IP=10.132.0.3 
@@ -33,3 +33,9 @@ ProxyCommand ssh bastion nc %h %p
 ```bash
 $ ssh someinternalhost
 ```
+
+
+## HW6
+
+testapp_IP = 35.230.7.97
+testapp_port = 9292
