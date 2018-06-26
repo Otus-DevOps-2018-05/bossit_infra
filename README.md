@@ -33,11 +33,14 @@ $ ssh someinternalhost
 
 ## HW6
 testapp_IP = 35.230.7.97
-
 testapp_port = 9292
 
+#### Добавление правила для firewall:
+```bash
+gcloud compute firewall-rules create "allow-puma" --allow tcp:9292
+```
 
-#### Создание инстанса и запуск локального bash-скрипта
+#### Создание инстанса и запуск локального `bash-скрипта`
 ```bash
 gcloud compute instances create reddit-app2 \
     --boot-disk-size=10GB \
@@ -50,7 +53,7 @@ gcloud compute instances create reddit-app2 \
     --metadata-from-file startup-script=startup-script.sh
 ```
 
-#### Создание инстанса и запуск удаленного bash-скрипта
+#### Создание инстанса и запуск удаленного `bash-скрипта`
 ```bash
 gcloud compute instances create reddit-app2 \
     --boot-disk-size=10GB \
@@ -62,8 +65,3 @@ gcloud compute instances create reddit-app2 \
     --zone=us-east1-b \
     --metadata startup-script-url=https://gist.githubusercontent.com/bossit/c3f515eb7cd3b588f965e070af7f672d/raw/4e6046baa72077bc50936e2b169ae8dde6aadda7/otus-after-create-instance.sh
 ```
-
-
-
-
-
