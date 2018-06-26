@@ -39,3 +39,29 @@ $ ssh someinternalhost
 
 testapp_IP = 35.230.7.97
 testapp_port = 9292
+
+#### Создание инстанса и запуск локального bash-скрипта
+```bash
+gcloud compute instances create reddit-app2 \
+    --boot-disk-size=10GB \
+    --image-family=ubuntu-1604-lts \
+    --image-project=ubuntu-os-cloud \
+    --machine-type=g1-small \
+    --tags=puma-server \
+    --restart-on-failure \
+    --zone=us-east1-b \
+    --metadata-from-file startup-script=install.sh
+```
+
+#### Создание инстанса и запуск удаленного bash-скрипта
+```bash
+gcloud compute instances create reddit-app2 \
+    --boot-disk-size=10GB \
+    --image-family=ubuntu-1604-lts \
+    --image-project=ubuntu-os-cloud \
+    --machine-type=g1-small \
+    --tags=puma-server \
+    --restart-on-failure \
+    --zone=us-east1-b \
+    --metadata startup-script-url=https://gist.githubusercontent.com/bossit/c3f515eb7cd3b588f965e070af7f672d/raw/4e6046baa72077bc50936e2b169ae8dde6aadda7/otus-after-create-instance.sh
+```
