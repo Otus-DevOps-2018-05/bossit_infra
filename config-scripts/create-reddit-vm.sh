@@ -5,5 +5,5 @@ gcloud compute instances create reddit-app-full \
   --image-family=reddit-base \
   --machine-type=g1-small \
   --tags=puma-server \
-  --zone=europe-west1-b
+  --zone=europe-west1-b \
   --restart-on-failure
