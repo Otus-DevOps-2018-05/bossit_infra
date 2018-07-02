@@ -2,17 +2,18 @@
     "variables": {
         "source_image_family": null,
         "project_id": null,
+        "app_owner": "bossit",
         "machine_type": "g1-small"
     },
     "builders": [
         {
             "type": "googlecompute",
             "project_id": "infra-{{user `project_id`}}",
-            "image_name": "reddit-base-{{timestamp}}",
+            "image_name": "reddit-full",
             "image_family": "reddit-base",
             "source_image_family": "{{user `source_image_family`}}",
             "zone": "{{user `zone`}}",
-            "ssh_username": "appuser",
+            "ssh_username": "{{user `app_owner`}}",
             "machine_type": "{{user `machine_type`}}",
             "image_description": "{{user `image_description`}}",
             "disk_size": "{{user `disk_size`}}",
@@ -23,14 +24,14 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "file",
+            "source": "files/redditd.service",
+            "destination": "/tmp/" 
         },
         {
             "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
+            "script": "scripts/start_service.sh",
+            "execute_command": "{{.Path}}"
         }
     ]
 }

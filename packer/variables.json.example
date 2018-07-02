@@ -1,5 +1,5 @@
 {
-    "project_id": "project-xxxxx",
+    "project_id": "xxxxx",
     "source_image_family": "ubuntu-1604-lts",
     "image_description": "the secret description of image",
     "disk_size": "10",
