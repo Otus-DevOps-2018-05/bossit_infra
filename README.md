@@ -1,7 +1,7 @@
 # bossit_infra
 bossit Infra repository
 
-## HW5
+## HW3
 bastion_IP=35.206.179.241
 someinternalhost_IP=10.132.0.3 
 
@@ -31,7 +31,7 @@ ProxyCommand ssh bastion nc %h %p
 $ ssh someinternalhost
 ```
 
-## HW6
+## HW4
 testapp_IP = 35.230.7.97
 testapp_port = 9292
 
@@ -64,4 +64,15 @@ gcloud compute instances create reddit-app2 \
     --restart-on-failure \
     --zone=us-east1-b \
     --metadata startup-script-url=https://gist.githubusercontent.com/bossit/c3f515eb7cd3b588f965e070af7f672d/raw/4e6046baa72077bc50936e2b169ae8dde6aadda7/otus-after-create-instance.sh
+```
+
+## HW5
+Создание обзраза VM:
+
+```bash
+$ packer build \                                                
+    -var 'project_id=XXX' \
+    -var 'source_image_family=ubuntu-1604-lts' \
+    -var-file=variables.json \
+    ubuntu16.json
 ```
