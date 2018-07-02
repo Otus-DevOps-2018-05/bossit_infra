@@ -1,8 +1,9 @@
 {
-    "image_description": "the secret name of image",
-    "disk_size": "20",
+    "source_image_family": "ubuntu-1604-lts",
+    "image_description": "the secret description of image",
+    "disk_size": "10",
     "disk_type": "pd-standard",
     "network": "default",
-    "tags": "world, job, may",
-    "zone": "my-best-zone"
+    "tags": "world,job,may",
+    "zone": "europe-west1-b"
 }
