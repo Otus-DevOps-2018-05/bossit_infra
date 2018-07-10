@@ -9,7 +9,6 @@
         "network": "default",
         "tags": "puma,ruby,mongo,packer",
         "zone": "europe-west1-b"
-
     },
     "builders": [
         {

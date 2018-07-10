@@ -67,8 +67,24 @@ gcloud compute instances create reddit-app2 \
 ```
 
 ## HW5
-Создание обзраза VM:
+Создание базового образа VM:
 
 ```bash
 $ packer build -var-file=variables.json ubuntu16.json
+```
+
+Создание полного образа VM вместе с приложением:
+
+Обязательно указать параметры:
+- project_id
+- source_image_family 
+
+```bash
+$ packer build -var 'project_id=55555' -var 'source_image_family=reddit-base' immutable.json
+```
+
+И после создания образа запустить bash-скрипт для создания инстанса:
+
+```bash
+$ sh config-scripts/create-reddit-vm.sh
 ```
