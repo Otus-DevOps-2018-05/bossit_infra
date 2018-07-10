@@ -70,9 +70,5 @@ gcloud compute instances create reddit-app2 \
 Создание обзраза VM:
 
 ```bash
-$ packer build \                                                
-    -var 'project_id=XXX' \
-    -var 'source_image_family=ubuntu-1604-lts' \
-    -var-file=variables.json \
-    ubuntu16.json
+$ packer build -var-file=variables.json ubuntu16.json
 ```
