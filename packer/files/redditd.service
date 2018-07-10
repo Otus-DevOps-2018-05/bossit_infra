@@ -1,0 +1,13 @@
+[Unit]
+Description=RedditApp
+After=network.target
+
+[Service]
+Type=simple
+User=bossit
+WorkingDirectory=/home/bossit/reddit
+ExecStart=/usr/local/bin/puma
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
