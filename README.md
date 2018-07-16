@@ -88,3 +88,8 @@ $ packer build -var 'project_id=55555' -var 'source_image_family=reddit-base' im
 ```bash
 $ sh config-scripts/create-reddit-vm.sh
 ```
+
+## HW5 (terraform-1)
+
+### Задание с *
+Когда добавил ssh-key пользователя `appuser_web` через web-интерфейс и после этого применил комманду `terraform apply`, данный ключ удалился и остались только ключи описанные в файле `main.tf`. _Мораль - делай изменения через IaC :)_
