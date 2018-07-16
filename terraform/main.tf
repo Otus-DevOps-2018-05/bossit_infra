@@ -7,7 +7,7 @@ provider "google" {
 # добавление ssh ключа в метаданные проекта
 resource "google_compute_project_metadata" "default" {
   metadata {
-    ssh-keys = "appuser:${file(var.public_key_path)}"
+    ssh-keys = "appuser:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}appuser3:${file(var.public_key_path)}"
   }
 }
 
