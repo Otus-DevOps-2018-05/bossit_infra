@@ -4,6 +4,13 @@ provider "google" {
   region  = "${var.region}"
 }
 
+# добавление ssh ключа в метаданные проекта
+resource "google_compute_project_metadata" "default" {
+  metadata {
+    ssh-keys = "appuser:${file(var.public_key_path)}"
+  }
+}
+
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
