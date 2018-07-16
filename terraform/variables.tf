@@ -23,3 +23,15 @@ variable "zone" {
   description = "Zone"
   default     = "europe-west1-b"
 }
+
+variable "machine_type" {
+  default = "g1-small"
+}
+
+variable "count" {
+  default = 2
+}
+
+variable "puma_port" {
+  default = 9292
+}
