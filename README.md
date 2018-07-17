@@ -1,7 +1,7 @@
 # bossit_infra
 bossit Infra repository
 
-## HW3
+## HW3 
 bastion_IP=35.206.179.241
 someinternalhost_IP=10.132.0.3 
 
@@ -66,7 +66,7 @@ gcloud compute instances create reddit-app2 \
     --metadata startup-script-url=https://gist.githubusercontent.com/bossit/c3f515eb7cd3b588f965e070af7f672d/raw/4e6046baa72077bc50936e2b169ae8dde6aadda7/otus-after-create-instance.sh
 ```
 
-## HW5
+## HW5 (packer)
 Создание базового образа VM:
 
 ```bash
@@ -89,7 +89,7 @@ $ packer build -var 'project_id=55555' -var 'source_image_family=reddit-base' im
 $ sh config-scripts/create-reddit-vm.sh
 ```
 
-## HW5 (terraform-1)
+## HW6 (terraform-1)
 
 ### Задание с *
 Когда добавил ssh-key пользователя `appuser_web` через web-интерфейс и после этого применил комманду `terraform apply`, данный ключ удалился и остались только ключи описанные в файле `main.tf`. _Мораль - делай изменения через IaC :)_

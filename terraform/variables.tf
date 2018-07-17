@@ -29,7 +29,7 @@ variable "machine_type" {
 }
 
 variable "count" {
-  default = 2
+  default = 1
 }
 
 variable "puma_port" {
