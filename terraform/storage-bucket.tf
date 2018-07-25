@@ -7,7 +7,7 @@ provider "google" {
 module "storage-bucket" {
   source  = "SweetOps/storage-bucket/google"
   version = "0.1.1"
-  name    = ["bossit-infra-stage", "bossit-infra-prod"]
+  name    = ["otus-bossit-tf"]
 }
 
 output storage-bucket_url {
