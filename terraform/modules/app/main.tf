@@ -21,9 +21,7 @@ resource "google_compute_instance" "app" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
-}
 
-resource "null_resource" "app" {
   connection {
     type        = "ssh"
     user        = "appuser"
