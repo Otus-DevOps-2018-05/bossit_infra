@@ -9,3 +9,5 @@ disk_image = "reddit-base-123456789"
 db_disk_image = "reddit-db-base"
 
 app_disk_image = "reddit-app-base"
+
+source_ranges = ["0.0.0.0/0"]
