@@ -14,7 +14,7 @@
     "builders": [
         {
             "type": "googlecompute",
-            "project_id": "infra-{{user `project_id`}}",
+            "project_id": "{{user `project_id`}}",
             "image_name": "reddit-full",
             "image_family": "reddit-full",
             "source_image_family": "{{user `source_image_family`}}",
