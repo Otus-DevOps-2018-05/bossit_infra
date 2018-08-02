@@ -107,3 +107,12 @@ $ sh config-scripts/create-reddit-vm.sh
 ```
 
 После того как мы удалили каталог `reddit` и запустили еще раз плейбук `clone.yml`, который после заверешения сообщил нам об изменении инстанса `appserver changed=1 `.
+
+
+### Задание с **
+
+Конфигурация инвентори описана в `json`:
+
+```bash
+$ ansible all -i ./bash-inventory.sh -m ping
+```
